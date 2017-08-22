@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Question Catagories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Catagory</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_catagories.each do |question_catagory| %>
+      <tr>
+        <td><%= question_catagory.catagory %></td>
+        <td><%= link_to 'Show', question_catagory %></td>
+        <td><%= link_to 'Edit', edit_question_catagory_path(question_catagory) %></td>
+        <td><%= link_to 'Destroy', question_catagory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question Catagory', new_question_catagory_path %>

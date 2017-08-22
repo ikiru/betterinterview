@@ -1,0 +1,2 @@
+class QuestionCatagory < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interviewnumber: MyString
+  position: one
+  interview_type: one
+  interview_question: 
+  interview_comments: MyString
+
+two:
+  interviewnumber: MyString
+  position: two
+  interview_type: two
+  interview_question: 
+  interview_comments: MyString

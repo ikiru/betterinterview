@@ -1,0 +1,2 @@
+class InterviewType < ApplicationRecord
+end

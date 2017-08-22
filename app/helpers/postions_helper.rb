@@ -1,0 +1,2 @@
+module PostionsHelper
+end

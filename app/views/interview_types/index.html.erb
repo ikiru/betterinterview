@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interview Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interview_types.each do |interview_type| %>
+      <tr>
+        <td><%= interview_type.type %></td>
+        <td><%= link_to 'Show', interview_type %></td>
+        <td><%= link_to 'Edit', edit_interview_type_path(interview_type) %></td>
+        <td><%= link_to 'Destroy', interview_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interview Type', new_interview_type_path %>
