@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  root 'homes#index'
 
-  get 'homes/index'
+  get 'admin' => 'admin#index'
 
-  devise_for :users
-  root   'home#index'
-  
+  get 'dashboards/index'
+
+  devise_for :users, controllers: {registrations: "devise/registrations"}
+
   resources :reports
   resources :interviews
   resources :postions
