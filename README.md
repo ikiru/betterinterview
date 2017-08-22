@@ -1,24 +1,7 @@
-# README
+Better Interview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Empowering the Interviewee to be as prepared as possibly to land that job they desire. Web app to practice the interview process for whatever job you choose.  Providing you with the ability to:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Practice interview question
+- Research interview practices used by companies in your area.
+- Work on Algorithms or problems companies may ask you to do.
