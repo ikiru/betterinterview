@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'homes/index'
+
   devise_for :users
   root   'home#index'
+  
   resources :reports
   resources :interviews
   resources :postions
