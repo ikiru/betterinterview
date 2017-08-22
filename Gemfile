@@ -40,6 +40,9 @@ gem 'simple_form'
 #rails generate simple_form:install
 #rails generate simple_form:install --bootstrap
 
+gem 'devise'
+# $ rails generate devise:install
+
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 

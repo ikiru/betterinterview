@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root   'home#index'
+  resources :reports
   resources :interviews
   resources :postions
   resources :project_catagories
