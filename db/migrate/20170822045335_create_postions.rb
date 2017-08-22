@@ -1,6 +1,6 @@
 class CreatePostions < ActiveRecord::Migration[5.1]
   def change
-    create_table :postions do |t|
+    create_table :positions do |t|
       t.string :position
 
       t.timestamps
