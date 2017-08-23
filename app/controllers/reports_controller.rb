@@ -35,6 +35,11 @@ class ReportsController < ApplicationController
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end
+    
+    private
+    def report_params
+      params.require(:issue).permit(:issue)
+    end
   end
 
   # PATCH/PUT /reports/1
