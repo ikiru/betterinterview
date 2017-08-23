@@ -79,12 +79,6 @@ ActiveRecord::Schema.define(version: 20170822213930) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "postions", force: :cascade do |t|
-    t.string "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "project_catagories", force: :cascade do |t|
     t.string "catagory"
     t.datetime "created_at", null: false
@@ -128,6 +122,9 @@ ActiveRecord::Schema.define(version: 20170822213930) do
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["first_name"], name: "index_users_on_first_name"
+    t.index ["last_name"], name: "index_users_on_last_name"
+    t.index ["phone"], name: "index_users_on_phone"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
