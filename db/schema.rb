@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822213930) do
+ActiveRecord::Schema.define(version: 20170823211246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20170822213930) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "business"
+    t.bigint "city_id"
+    t.bigint "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_businesses_on_city_id"
+    t.index ["state_id"], name: "index_businesses_on_state_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "city"
+    t.bigint "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "interview_questions", force: :cascade do |t|
@@ -97,6 +115,12 @@ ActiveRecord::Schema.define(version: 20170822213930) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -129,6 +153,9 @@ ActiveRecord::Schema.define(version: 20170822213930) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "businesses", "cities"
+  add_foreign_key "businesses", "states"
+  add_foreign_key "cities", "states"
   add_foreign_key "interview_questions", "reports"
   add_foreign_key "interviews", "interview_types"
   add_foreign_key "interviews", "positions"

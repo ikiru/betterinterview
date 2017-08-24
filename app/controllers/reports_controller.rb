@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
+
   # GET /reports
   # GET /reports.json
   def index
@@ -35,10 +36,10 @@ class ReportsController < ApplicationController
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end
-    
+
     private
     def report_params
-      params.require(:issue).permit(:issue)
+      params.require(:report).permit(:issue)
     end
   end
 

@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   root 'homes#index'
 
-  get 'dashboards/index'
+  get 'dashboards' => 'dashboards#index'
 
   devise_for :users, controllers: {registrations: "devise/registrations"}
 
